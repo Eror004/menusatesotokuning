@@ -3,9 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Sate Soto Kuning Legendaris Bpk Aip S - Putra Gunung Salak. Pesan online langsung ke WhatsApp.">
+    <meta name="theme-color" content="#0ea5e9">
     <title>Sate Soto Kuning Bpk Aip S - Putra Gunung Salak</title>
+    
+    <!-- Preconnect untuk performa -->
+    <link rel="preconnect" href="https://cdn.tailwindcss.com">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <script>
         tailwind.config = {
             theme: {
@@ -29,53 +37,64 @@
         }
     </script>
     <style>
-        /* Custom Background with Beautiful Sky */
+        /* Optimized styles for better performance */
         .bg-mountain {
-            background-image: url('https://images.unsplash.com/photo-1517483000871-1dbf64a6e1c6?q=80&w=2000&auto=format&fit=crop'); /* Beautiful blue sky with clouds */
+            background-image: url('https://images.unsplash.com/photo-1517483000871-1dbf64a6e1c6?q=80&w=1200&auto=format&fit=crop');
             background-size: cover;
             background-position: center;
             background-attachment: fixed;
             filter: blur(2px);
-            transform: scale(1.05); /* Prevent white edges from blur */
+            transform: scale(1.05);
+            will-change: transform;
         }
         
-        /* Glassmorphism Utilities */
+        /* Mobile optimization - disable fixed background */
+        @media (max-width: 768px) {
+            .bg-mountain {
+                background-attachment: scroll;
+            }
+        }
+        
+        /* Glassmorphism with fallback */
         .glass-card {
-            background: rgba(255, 255, 255, 0.92);
-            backdrop-filter: blur(10px);
-            -webkit-backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.8);
-        }
-        
-        .glass-header {
-            background: rgba(255, 255, 255, 0.1);
+            background: rgba(255, 255, 255, 0.95);
             backdrop-filter: blur(8px);
             -webkit-backdrop-filter: blur(8px);
-            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        
+        @supports not (backdrop-filter: blur(8px)) {
+            .glass-card {
+                background: rgba(255, 255, 255, 0.98);
+            }
         }
 
         .glass-nav {
-            background: rgba(255, 255, 255, 0.8);
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
-            border: 1px solid rgba(255, 255, 255, 0.5);
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
         }
 
-        /* Animation Utilities */
+        /* Simplified animations */
         @keyframes float {
-            0% { transform: translateY(0px); }
-            50% { transform: translateY(-10px); }
-            100% { transform: translateY(0px); }
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-8px); }
         }
         
         .animate-float {
-            animation: float 6s ease-in-out infinite;
+            animation: float 4s ease-in-out infinite;
+        }
+        
+        /* Disable float animation on mobile */
+        @media (max-width: 640px) {
+            .animate-float {
+                animation: none;
+            }
         }
 
-        @keyframes slideUpFade {
+        @keyframes slideUp {
             from {
                 opacity: 0;
-                transform: translateY(40px);
+                transform: translateY(20px);
             }
             to {
                 opacity: 1;
@@ -84,23 +103,30 @@
         }
         
         .card-enter {
-            animation: slideUpFade 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+            animation: slideUp 0.4s ease-out forwards;
             opacity: 0;
         }
 
-        /* Custom Scrollbar */
-        ::-webkit-scrollbar {
-            width: 8px;
+        /* Touch-friendly scrollbar */
+        @media (min-width: 768px) {
+            ::-webkit-scrollbar {
+                width: 6px;
+            }
+            ::-webkit-scrollbar-track {
+                background: transparent; 
+            }
+            ::-webkit-scrollbar-thumb {
+                background: rgba(14, 165, 233, 0.5); 
+                border-radius: 3px;
+            }
         }
-        ::-webkit-scrollbar-track {
-            background: rgba(255,255,255,0.1); 
-        }
-        ::-webkit-scrollbar-thumb {
-            background: rgba(56, 189, 248, 0.6); 
-            border-radius: 4px;
-        }
-        ::-webkit-scrollbar-thumb:hover {
-            background: rgba(2, 132, 199, 0.8); 
+        
+        /* Improve touch targets on mobile */
+        @media (max-width: 640px) {
+            button, a, input {
+                min-height: 44px;
+                min-width: 44px;
+            }
         }
     </style>
 </head>
@@ -114,32 +140,32 @@
     <div class="relative z-10 min-h-screen flex flex-col">
         
         <!-- Hero Section -->
-        <header class="relative pt-20 md:pt-32 pb-12 md:pb-16 px-4 text-center">
+        <header class="relative pt-16 md:pt-32 pb-8 md:pb-16 px-3 text-center">
             <div class="max-w-4xl mx-auto">
-                <div class="inline-block animate-float mb-4">
-                    <div class="bg-white/20 backdrop-blur-md p-3 md:p-4 rounded-full border border-white/30 shadow-2xl">
-                        <span class="text-4xl md:text-5xl filter drop-shadow-lg">⛰️</span>
+                <div class="inline-block animate-float mb-3 md:mb-4">
+                    <div class="bg-white/20 backdrop-blur-md p-2 md:p-4 rounded-full border border-white/30 shadow-2xl">
+                        <span class="text-3xl md:text-5xl filter drop-shadow-lg">⛰️</span>
                     </div>
                 </div>
-                <h1 class="text-4xl sm:text-5xl md:text-7xl font-bebas text-yellow-400 mb-2 tracking-wider drop-shadow-lg uppercase">
+                <h1 class="text-3xl sm:text-5xl md:text-7xl font-bebas text-yellow-400 mb-1 md:mb-2 tracking-wider drop-shadow-lg uppercase leading-tight">
                     SATE SOTO KUNING
                 </h1>
-                <h2 class="text-2xl sm:text-3xl md:text-5xl font-bebas text-yellow-300 mb-4 md:mb-6 drop-shadow-md tracking-wide">
+                <h2 class="text-xl sm:text-3xl md:text-5xl font-bebas text-yellow-300 mb-3 md:mb-6 drop-shadow-md tracking-wide">
                     BPK AIP S
                 </h2>
-                <div class="inline-block px-6 sm:px-8 py-2 sm:py-3 bg-white/10 backdrop-blur-md rounded-full border border-white/20 mb-6 md:mb-8">
-                    <p class="text-white font-bold tracking-wider uppercase text-base sm:text-lg md:text-2xl">
+                <div class="inline-block px-4 sm:px-8 py-1.5 sm:py-3 bg-white/10 backdrop-blur-md rounded-full border border-white/20 mb-4 md:mb-8">
+                    <p class="text-white font-bold tracking-wider uppercase text-sm sm:text-lg md:text-2xl">
                         Putra Gunung Salak
                     </p>
                 </div>
-                <p class="text-sky-50 max-w-2xl mx-auto text-base sm:text-lg leading-relaxed drop-shadow opacity-90 px-4">
+                <p class="text-sky-50 max-w-2xl mx-auto text-sm sm:text-lg leading-relaxed drop-shadow opacity-90 px-2">
                     Nikmati kehangatan soto kuning legendaris dan sate pilihan dengan suasana pegunungan yang segar.
                 </p>
             </div>
         </header>
 
         <!-- Menu Section -->
-        <main class="flex-grow px-4 pb-24 max-w-7xl mx-auto w-full">
+        <main class="flex-grow px-3 md:px-4 pb-24 md:pb-32 max-w-7xl mx-auto w-full">
             
             <!-- Category Filter (Floating Glass) -->
             <div class="sticky top-4 z-40 mb-8 md:mb-12">
@@ -160,11 +186,15 @@
                         <span class="relative z-10 group-[.active]:text-white text-slate-600 group-hover:text-sky-600 group-[.active]:group-hover:text-white transition-colors">🥣 Sop</span>
                         <div class="absolute inset-0 bg-sky-500 opacity-0 group-[.active]:opacity-100 transition-opacity duration-300 rounded-full"></div>
                     </button>
+                    <button onclick="filterMenu('minuman')" class="filter-btn group relative px-3 sm:px-4 md:px-6 py-2 md:py-2.5 rounded-full text-xs sm:text-sm font-bold transition-all duration-300 overflow-hidden">
+                        <span class="relative z-10 group-[.active]:text-white text-slate-600 group-hover:text-sky-600 group-[.active]:group-hover:text-white transition-colors">🥤 Minuman</span>
+                        <div class="absolute inset-0 bg-sky-500 opacity-0 group-[.active]:opacity-100 transition-opacity duration-300 rounded-full"></div>
+                    </button>
                 </div>
             </div>
 
             <!-- Menu Grid -->
-            <div id="menuGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
+            <div id="menuGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 lg:gap-8">
                 <!-- JavaScript will populate this -->
             </div>
         </main>
@@ -255,7 +285,25 @@
             { id: 5, name: 'SOTO AYAM', category: 'soto', price: 22000, description: 'Soto Ayam kuah kuning santan khas Bogor yang gurih.', image: '🍲' },
             { id: 6, name: 'SOTO KIKIL', category: 'soto', price: 28000, description: 'Kikil sapi kenyal berpadu dengan kuah santan kuning kaya rempah.', image: '🍲' },
             { id: 7, name: 'SOTO BABAT', category: 'soto', price: 28000, description: 'Babat sapi bersih dan empuk dalam kuah soto kuning legendaris.', image: '🍲' },
-            { id: 8, name: 'SOTO MIE', category: 'soto', price: 25000, description: 'Mie kuning, bihun, risoles, dan daging sapi dalam kuah segar.', image: '🍜' }
+            { id: 8, name: 'SOTO MIE', category: 'soto', price: 25000, description: 'Mie kuning, bihun, risoles, dan daging sapi dalam kuah segar.', image: '🍜' },
+            
+            // Minuman Tradisional
+            { id: 9, name: 'ES KELAPA MUDA', category: 'minuman', price: 12000, description: 'Kelapa muda segar langsung dari pohon, dengan es batu yang menyegarkan.', image: '🥥' },
+            { id: 10, name: 'ES JERUK NIPIS', category: 'minuman', price: 8000, description: 'Perasan jeruk nipis asli dengan gula aren, segar dan menyehatkan.', image: '🍋' },
+            { id: 11, name: 'ES CINCAU HIJAU', category: 'minuman', price: 10000, description: 'Cincau hijau kenyal dengan santan dan gula merah cair yang manis.', image: '🧊' },
+            { id: 12, name: 'ES CENDOL', category: 'minuman', price: 12000, description: 'Cendol kenyal dengan santan gurih dan gula jawa yang legit.', image: '🍵' },
+            
+            // Minuman Hangat
+            { id: 13, name: 'TEH MANIS HANGAT', category: 'minuman', price: 6000, description: 'Teh melati hangat dengan gula batu, teman sempurna untuk soto.', image: '☕' },
+            { id: 14, name: 'WEDANG JAHE', category: 'minuman', price: 10000, description: 'Jahe merah hangat dengan gula merah, menghangatkan badan.', image: '🫖' },
+            { id: 15, name: 'KOPI TUBRUK', category: 'minuman', price: 10000, description: 'Kopi bubuk pilihan diseduh langsung, aroma khas pegunungan.', image: '☕' },
+            
+            // Minuman Dingin Modern
+            { id: 16, name: 'ES TEH MANIS', category: 'minuman', price: 6000, description: 'Teh manis dingin klasik yang menyegarkan dahaga.', image: '🧋' },
+            { id: 17, name: 'ES LEMON TEA', category: 'minuman', price: 10000, description: 'Teh dengan perasan lemon segar dan madu alami.', image: '🍹' },
+            { id: 18, name: 'ES CAMPUR', category: 'minuman', price: 15000, description: 'Campuran buah segar, cincau, kelapa muda, dan sirup spesial.', image: '🧉' },
+            { id: 19, name: 'JUS ALPUKAT', category: 'minuman', price: 15000, description: 'Alpukat mentega blend dengan susu dan gula aren.', image: '🥤' },
+            { id: 20, name: 'AIR MINERAL', category: 'minuman', price: 5000, description: 'Air mineral botol dingin 600ml.', image: '💧' }
         ];
 
         let cart = [];
@@ -264,8 +312,30 @@
 
         // --- Initialization ---
         document.addEventListener('DOMContentLoaded', () => {
+            loadCartFromStorage();
             renderMenu();
+            updateCartUI();
         });
+        
+        // --- Storage Functions ---
+        function saveCartToStorage() {
+            try {
+                localStorage.setItem('menuCart', JSON.stringify(cart));
+            } catch(e) {
+                console.log('Unable to save cart');
+            }
+        }
+        
+        function loadCartFromStorage() {
+            try {
+                const saved = localStorage.getItem('menuCart');
+                if(saved) {
+                    cart = JSON.parse(saved);
+                }
+            } catch(e) {
+                console.log('Unable to load cart');
+            }
+        }
 
         // --- Core Functions ---
         function renderMenu() {
@@ -289,6 +359,7 @@
                 if(item.category === 'sate') { bgClass = 'bg-orange-50'; textClass = 'text-orange-600'; }
                 if(item.category === 'soto') { bgClass = 'bg-yellow-50'; textClass = 'text-yellow-600'; }
                 if(item.category === 'sop') { bgClass = 'bg-emerald-50'; textClass = 'text-emerald-600'; }
+                if(item.category === 'minuman') { bgClass = 'bg-sky-50'; textClass = 'text-sky-600'; }
 
                 card.innerHTML = `
                     <div class="h-40 ${bgClass} flex items-center justify-center relative overflow-hidden group-hover:h-44 transition-all duration-500">
@@ -350,6 +421,7 @@
                 cart.push({...item, quantity: 1});
             }
             
+            saveCartToStorage();
             updateCartUI();
             showToast(`✨ ${item.name} ditambahkan!`);
         }
@@ -447,6 +519,7 @@
                 if(item.quantity <= 0) {
                     cart = cart.filter(c => c.id !== id);
                 }
+                saveCartToStorage();
                 updateCartUI();
                 renderCartItems();
                 
@@ -486,9 +559,11 @@
             
             // Reset
             cart = [];
+            saveCartToStorage();
             updateCartUI();
             closeCartModal();
             document.getElementById('customerName').value = '';
+            document.getElementById('tableNumber').value = '';
         }
 
         // --- Toast Notification ---
